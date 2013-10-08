@@ -1,0 +1,8 @@
+
+Please provide your email address, and we will send you a link to begin your tour request.
+<br/>
+<%= form_tag(:controller => "tour_request", :action => "send_initial_email") do %>
+     <%= label_tag(:email_address, "Email Address:") %>
+    <%= text_field_tag(:email_address, @email) %><br />
+    <%= submit_tag("Submit") %>
+<% end %>

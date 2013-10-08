@@ -1,0 +1,13 @@
+Please tell us about your tour preferences.
+
+<br/>
+<br/>
+<%= form_for @tour_request, url: { action: 'create_request' } do | tour_info_form | %>
+    <%= label_tag(:tour_date, "Preferred Tour Date:") %>
+    <%= tour_info_form.date_select :tour_date, use_month_numbers: true, order: [ :month, :day, :year ] %>    <br/>
+    <%= label_tag(:last_name, "Additional Questions:") %>
+    <%= tour_info_form.text_area :additional_questions, :size => "30x3" %>  <br/>
+    <%= label_tag(:message, "Amenities You Are Interested In:") %>
+    <%= select_tag "amenity_ids", options_from_collection_for_select(@amenities, "id", "name"), :multiple => true %>   <br/>
+    <%= submit_tag("Submit") %>
+<% end %>

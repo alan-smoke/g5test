@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @page_title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h2>Tours Du Jour</h2>
+
+<% if flash.now[:errors] %>
+  <h4>Errors:</h4>
+     <% flash.now[:errors].values.each do |error| %>
+       <% if error.first != '' %>
+         <h4><%= error.first %></h4>
+       <% end %>
+     <% end %>
+
+<% end %>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<p><%= @tour_request.customer.first_name %>, thank you for viewing our facility.
+    Please take a brief moment to tell us what you thought of your tour by rating your experience from 1 to 5.
+    1 being excellent, and 5 being poor.</p>
+
+<%= form_tag  :action => 'create_rating'  do | rating_form | %>
+
+  <% Array(1..5).each do |rating| %>
+    <br><%= radio_button_tag 'rating', rating %>
+    <%= rating %>
+  <% end %>
+  <br/>
+
+<%= submit_tag("Submit") %>
+<% end %>
+
+<br/>
+Tour Date: <%= @tour_request.tour_date.to_formatted_s(:long) %><br/>
+Additional Questions:  <%= @tour_request.additional_questions %><br/>
+Amenities you are interested in: <br/>
+
+<% @tour_request.amenities.each do | amenity | %>
+<%= amenity.name %><br/>
+<% end %>

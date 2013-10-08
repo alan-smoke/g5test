@@ -1,0 +1,17 @@
+<h3>Tours Du Jour</h3>
+
+A new Tour Request has been made.
+<br/>
+<br/>
+IP Address: <%= @tour_request.customer.ip_address %><br/>
+First  Name: <%= @tour_request.customer.first_name %><br/>
+Last Name: <%= @tour_request.customer.last_name %><br/>
+Email: <%= @tour_request.customer.email %><br/>
+Phone Number: <%= @tour_request.customer.phone_number %><br/>
+Tour Date: <%= @tour_request.tour_date.to_formatted_s(:long) %><br/>
+Additional Questions:  <%= @tour_request.additional_questions %><br/>
+Amenities customer is interested in: <br/>
+
+<% @tour_request.amenities.each do | amenity | %>
+    <%= amenity.name %><br/>
+<% end %>

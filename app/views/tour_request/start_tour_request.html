@@ -1,0 +1,12 @@
+Please start your request by providing us with your contact information.
+<br/>
+<br/>
+<%= form_for @customer, url: { action: 'tour_info' } do | personal_info_form | %>
+    <%= label_tag(:first_name, "First Name:") %>
+    <%= personal_info_form.text_field :first_name %> <br/>
+    <%= label_tag(:last_name, "Last Name:") %>
+    <%= personal_info_form.text_field :last_name %> <br/>
+    <%= label_tag(:message, "Phone Number:") %>
+    <%= personal_info_form.text_field :phone_number %><br/>
+    <%= submit_tag("Submit") %>
+<% end %>

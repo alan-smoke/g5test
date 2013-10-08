@@ -1,0 +1,12 @@
+
+
+<p><%= @tour_request.customer.first_name %>, your request for a tour has been processed.
+    You will be contacted by our team to confirm your tour.</p>
+
+Tour Date: <%= @tour_request.tour_date.to_formatted_s(:long) %><br/>
+Additional Questions:  <%= @tour_request.additional_questions %><br/>
+Amenities you are interested in: <br/>
+
+<% @tour_request.amenities.each do | amenity | %>
+<%= amenity.name %><br/>
+<% end %>
