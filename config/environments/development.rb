@@ -35,7 +35,7 @@ G5test::Application.configure do
   config.assets.debug = true
 
   config.initial_request_url = 'http://localhost:3000/tour_request/start_tour_request?customer_id='
-  config.support_email = 'alan.smoke@gmail.com'
+  config.support_email = 'tours@example.com'
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
